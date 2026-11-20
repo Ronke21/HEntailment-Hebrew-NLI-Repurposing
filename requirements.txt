@@ -1,0 +1,16 @@
+# training and evaluation
+torch>=2.8
+transformers>=4.57
+peft>=0.17
+accelerate
+bitsandbytes          # paged AdamW 8-bit for decoders
+datasets
+# judges, decoder evaluation (GPU)
+vllm>=0.22
+# construction, probes, reports (CPU)
+numpy
+pandas
+scipy
+scikit-learn
+sentence-transformers
+tqdm

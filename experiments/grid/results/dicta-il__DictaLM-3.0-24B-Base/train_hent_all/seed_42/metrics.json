@@ -1,0 +1,175 @@
+{
+  "model": "dicta-il/DictaLM-3.0-24B-Base",
+  "architecture": "decoder",
+  "approach": "lora_sft_generation",
+  "train_dataset": "hent_all",
+  "seed": 42,
+  "n_train": 14995,
+  "n_dev": 11652,
+  "max_steps": 2814,
+  "max_length": 2048,
+  "prompt_style": "instruction",
+  "hyperparams": {
+    "max_length": 2048,
+    "batch_size": 8,
+    "grad_accum": 2,
+    "eval_batch_size": 8,
+    "gen_batch_size": 96,
+    "dev_gen_cap": 2000,
+    "max_new_tokens": 8,
+    "lr": 0.0001,
+    "warmup_ratio": 0.03,
+    "weight_decay": 0.0,
+    "max_epochs": 3,
+    "max_steps_cap": 8000,
+    "min_steps": 100,
+    "eval_per_epoch": 4,
+    "early_stop_patience": 5,
+    "save_total_limit": 1,
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.05,
+    "lora_target": "all-linear",
+    "optim": "paged_adamw_8bit"
+  },
+  "model_flags": {
+    "attn_implementation": "sdpa",
+    "device_map": "cuda:0",
+    "gradient_checkpointing": true,
+    "batch_size": 2,
+    "grad_accum": 8,
+    "eval_batch_size": 8
+  },
+  "finished_at": "2026-09-25T20:53:11",
+  "versions": {
+    "transformers": "4.57.6",
+    "torch": "2.12.0+cu130"
+  },
+  "lora": {
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.05
+  },
+  "dev": {
+    "n": 2000,
+    "macro_f1": 0.9807,
+    "accuracy": 0.982,
+    "per_label_f1": {
+      "entailment": 0.9809,
+      "contradiction": 0.9687,
+      "neutral": 0.9925
+    },
+    "n_dev_generated": 2000,
+    "loss": 0.0163
+  },
+  "test": {
+    "heq": {
+      "n": 2639,
+      "macro_f1": 0.9923,
+      "accuracy": 0.9932,
+      "per_label_f1": {
+        "entailment": 0.9925,
+        "contradiction": 0.988,
+        "neutral": 0.9963
+      },
+      "n_bad_preds": 0
+    },
+    "qasem": {
+      "n": 1722,
+      "macro_f1": 0.9516,
+      "accuracy": 0.9582,
+      "per_label_f1": {
+        "entailment": 0.961,
+        "contradiction": 0.9338,
+        "neutral": 0.9601
+      },
+      "n_bad_preds": 0
+    },
+    "hesum": {
+      "n": 2437,
+      "macro_f1": 0.9589,
+      "accuracy": 0.9643,
+      "per_label_f1": {
+        "entailment": 0.9569,
+        "contradiction": 0.9356,
+        "neutral": 0.9842
+      },
+      "n_bad_preds": 0
+    },
+    "hebsummaries": {
+      "n": 2102,
+      "macro_f1": 0.9665,
+      "accuracy": 0.9672,
+      "per_label_f1": {
+        "entailment": 0.9532,
+        "contradiction": 0.9477,
+        "neutral": 0.9986
+      },
+      "n_bad_preds": 1
+    },
+    "heb_paraphrase": {
+      "n": 3713,
+      "macro_f1": 0.994,
+      "accuracy": 0.9941,
+      "per_label_f1": {
+        "entailment": 0.9939,
+        "contradiction": 0.9891,
+        "neutral": 0.999
+      },
+      "n_bad_preds": 0
+    },
+    "winograd": {
+      "n": 90,
+      "macro_f1": 0.596,
+      "accuracy": 0.6778,
+      "per_label_f1": {
+        "entailment": 0.6667,
+        "contradiction": 0.1212,
+        "neutral": 1.0
+      },
+      "n_bad_preds": 0
+    },
+    "hebnli": {
+      "n": 884,
+      "macro_f1": 0.705,
+      "accuracy": 0.7161,
+      "per_label_f1": {
+        "entailment": 0.7816,
+        "contradiction": 0.75,
+        "neutral": 0.5833
+      },
+      "n_bad_preds": 0
+    },
+    "lchaim": {
+      "n": 805,
+      "macro_f1": 0.4897,
+      "accuracy": 0.5193,
+      "per_label_f1": {
+        "entailment": 0.6309,
+        "contradiction": 0.4271,
+        "neutral": 0.4113
+      },
+      "n_bad_preds": 0
+    }
+  },
+  "test_pooled": {
+    "n": 14392,
+    "macro_f1": 0.9319,
+    "accuracy": 0.935,
+    "per_label_f1": {
+      "entailment": 0.9403,
+      "contradiction": 0.9127,
+      "neutral": 0.9427
+    }
+  },
+  "test_averaged": {
+    "n_test_sets": 8,
+    "macro_f1": 0.8317,
+    "accuracy": 0.8488,
+    "per_label_f1": {
+      "entailment": 0.8671,
+      "contradiction": 0.7616,
+      "neutral": 0.8666
+    }
+  }
+}

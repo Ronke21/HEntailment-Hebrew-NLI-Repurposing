@@ -1,0 +1,117 @@
+{
+  "model": "google/gemma-4-31B-it",
+  "architecture": "decoder",
+  "approach": "zero_shot_generation",
+  "train_dataset": "zero_shot",
+  "prompt_style": "instruction",
+  "test": {
+    "heq": {
+      "n": 2639,
+      "macro_f1": 0.9609,
+      "accuracy": 0.9682,
+      "per_label_f1": {
+        "entailment": 0.9804,
+        "contradiction": 0.9289,
+        "neutral": 0.9734
+      },
+      "n_bad_preds": 0
+    },
+    "qasem": {
+      "n": 1722,
+      "macro_f1": 0.8114,
+      "accuracy": 0.8304,
+      "per_label_f1": {
+        "entailment": 0.8301,
+        "contradiction": 0.7593,
+        "neutral": 0.845
+      },
+      "n_bad_preds": 0
+    },
+    "hesum": {
+      "n": 2437,
+      "macro_f1": 0.8425,
+      "accuracy": 0.8506,
+      "per_label_f1": {
+        "entailment": 0.8318,
+        "contradiction": 0.8189,
+        "neutral": 0.8768
+      },
+      "n_bad_preds": 0
+    },
+    "hebsummaries": {
+      "n": 2102,
+      "macro_f1": 0.6466,
+      "accuracy": 0.6522,
+      "per_label_f1": {
+        "entailment": 0.6461,
+        "contradiction": 0.6131,
+        "neutral": 0.6805
+      },
+      "n_bad_preds": 5
+    },
+    "heb_paraphrase": {
+      "n": 3713,
+      "macro_f1": 0.9437,
+      "accuracy": 0.9475,
+      "per_label_f1": {
+        "entailment": 0.9539,
+        "contradiction": 0.8979,
+        "neutral": 0.9795
+      },
+      "n_bad_preds": 0
+    },
+    "winograd": {
+      "n": 90,
+      "macro_f1": 0.7459,
+      "accuracy": 0.7667,
+      "per_label_f1": {
+        "entailment": 0.7397,
+        "contradiction": 0.5455,
+        "neutral": 0.9524
+      },
+      "n_bad_preds": 0
+    },
+    "hebnli": {
+      "n": 884,
+      "macro_f1": 0.863,
+      "accuracy": 0.8665,
+      "per_label_f1": {
+        "entailment": 0.8754,
+        "contradiction": 0.9292,
+        "neutral": 0.7845
+      },
+      "n_bad_preds": 0
+    },
+    "lchaim": {
+      "n": 805,
+      "macro_f1": 0.7013,
+      "accuracy": 0.7093,
+      "per_label_f1": {
+        "entailment": 0.7808,
+        "contradiction": 0.6914,
+        "neutral": 0.6316
+      },
+      "n_bad_preds": 0
+    }
+  },
+  "test_pooled": {
+    "n": 14392,
+    "macro_f1": 0.8521,
+    "accuracy": 0.8583,
+    "per_label_f1": {
+      "entailment": 0.8759,
+      "contradiction": 0.819,
+      "neutral": 0.8615
+    }
+  },
+  "test_averaged": {
+    "n_test_sets": 8,
+    "macro_f1": 0.8144,
+    "accuracy": 0.8239,
+    "per_label_f1": {
+      "entailment": 0.8298,
+      "contradiction": 0.773,
+      "neutral": 0.8405
+    }
+  }
+}

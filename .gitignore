@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+data/
+experiments/*/checkpoints/
+experiments/*/logs/
+experiments/*/tokenize_cache/
+experiments/*/results_smoke/
+experiments/*/checkpoints_smoke/
+experiments/*/logs_smoke/
+experiments/*/results/**/predictions/
+experiments/*.md
+quality/*.json

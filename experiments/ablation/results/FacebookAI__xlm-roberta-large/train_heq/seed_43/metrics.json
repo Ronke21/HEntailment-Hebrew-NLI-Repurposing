@@ -1,0 +1,137 @@
+{
+  "model": "FacebookAI/xlm-roberta-large",
+  "architecture": "encoder",
+  "approach": "sequence_classification",
+  "train_dataset": "heq",
+  "seed": 43,
+  "n_train": 2627,
+  "n_dev": 2580,
+  "max_steps": 3300,
+  "max_length": 512,
+  "hyperparams": {
+    "max_length": 2048,
+    "batch_size": 32,
+    "eval_batch_size": 64,
+    "lr": 2e-05,
+    "warmup_ratio": 0.1,
+    "weight_decay": 0.01,
+    "max_epochs": 20,
+    "max_steps_cap": 8000,
+    "min_steps": 200,
+    "eval_per_epoch": 4,
+    "early_stop_patience": 5,
+    "save_total_limit": 1
+  },
+  "model_flags": {},
+  "finished_at": "2026-09-24T08:13:16",
+  "versions": {
+    "transformers": "5.10.0.dev0",
+    "torch": "2.10.0+cu128"
+  },
+  "dev": {
+    "macro_f1": 0.9078,
+    "accuracy": 0.926
+  },
+  "test": {
+    "heq": {
+      "n": 2639,
+      "macro_f1": 0.9367,
+      "accuracy": 0.9488,
+      "per_label_f1": {
+        "entailment": 0.9688,
+        "contradiction": 0.8781,
+        "neutral": 0.9633
+      }
+    },
+    "qasem": {
+      "n": 1722,
+      "macro_f1": 0.6227,
+      "accuracy": 0.6963,
+      "per_label_f1": {
+        "entailment": 0.8522,
+        "contradiction": 0.3885,
+        "neutral": 0.6272
+      }
+    },
+    "hesum": {
+      "n": 2437,
+      "macro_f1": 0.6518,
+      "accuracy": 0.6849,
+      "per_label_f1": {
+        "entailment": 0.6023,
+        "contradiction": 0.4951,
+        "neutral": 0.8581
+      }
+    },
+    "hebsummaries": {
+      "n": 2102,
+      "macro_f1": 0.6976,
+      "accuracy": 0.7093,
+      "per_label_f1": {
+        "entailment": 0.6851,
+        "contradiction": 0.4718,
+        "neutral": 0.9358
+      }
+    },
+    "heb_paraphrase": {
+      "n": 3713,
+      "macro_f1": 0.7051,
+      "accuracy": 0.7113,
+      "per_label_f1": {
+        "entailment": 0.7678,
+        "contradiction": 0.4928,
+        "neutral": 0.8547
+      }
+    },
+    "winograd": {
+      "n": 90,
+      "macro_f1": 0.4079,
+      "accuracy": 0.4667,
+      "per_label_f1": {
+        "entailment": 0.6522,
+        "contradiction": 0.0,
+        "neutral": 0.5714
+      }
+    },
+    "hebnli": {
+      "n": 884,
+      "macro_f1": 0.3643,
+      "accuracy": 0.457,
+      "per_label_f1": {
+        "entailment": 0.5929,
+        "contradiction": 0.4795,
+        "neutral": 0.0204
+      }
+    },
+    "lchaim": {
+      "n": 805,
+      "macro_f1": 0.3095,
+      "accuracy": 0.359,
+      "per_label_f1": {
+        "entailment": 0.4892,
+        "contradiction": 0.2897,
+        "neutral": 0.1495
+      }
+    }
+  },
+  "test_pooled": {
+    "n": 14392,
+    "macro_f1": 0.6935,
+    "accuracy": 0.7114,
+    "per_label_f1": {
+      "entailment": 0.7516,
+      "contradiction": 0.5178,
+      "neutral": 0.811
+    }
+  },
+  "test_averaged": {
+    "n_test_sets": 8,
+    "macro_f1": 0.587,
+    "accuracy": 0.6292,
+    "per_label_f1": {
+      "entailment": 0.7013,
+      "contradiction": 0.4369,
+      "neutral": 0.6225
+    }
+  }
+}

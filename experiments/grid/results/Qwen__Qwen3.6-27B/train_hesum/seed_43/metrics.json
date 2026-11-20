@@ -1,0 +1,186 @@
+{
+  "model": "Qwen/Qwen3.6-27B",
+  "architecture": "decoder",
+  "approach": "lora_sft_generation",
+  "train_dataset": "hesum",
+  "seed": 43,
+  "n_train": 3000,
+  "n_dev": 2382,
+  "max_steps": 564,
+  "max_length": 2048,
+  "prompt_style": "instruction",
+  "hyperparams": {
+    "max_length": 2048,
+    "batch_size": 8,
+    "grad_accum": 2,
+    "eval_batch_size": 8,
+    "gen_batch_size": 96,
+    "dev_gen_cap": 2000,
+    "max_new_tokens": 8,
+    "lr": 0.0001,
+    "warmup_ratio": 0.03,
+    "weight_decay": 0.0,
+    "max_epochs": 3,
+    "max_steps_cap": 8000,
+    "min_steps": 100,
+    "eval_per_epoch": 4,
+    "early_stop_patience": 5,
+    "save_total_limit": 2,
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.05,
+    "lora_target": "all-linear",
+    "optim": "paged_adamw_8bit"
+  },
+  "model_flags": {
+    "attn_implementation": "sdpa",
+    "device_map": "cuda:0",
+    "gradient_checkpointing": true,
+    "batch_size": 2,
+    "grad_accum": 8,
+    "eval_batch_size": 2,
+    "lora_target": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ],
+    "vllm_lora_unsupported": true,
+    "gen_batch_size": 8
+  },
+  "finished_at": "2026-10-04T10:39:13",
+  "versions": {
+    "transformers": "5.10.0.dev0",
+    "torch": "2.10.0+cu128"
+  },
+  "lora": {
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.05
+  },
+  "dev": {
+    "n": 2000,
+    "macro_f1": 0.9669,
+    "accuracy": 0.973,
+    "per_label_f1": {
+      "entailment": 0.9684,
+      "contradiction": 0.9435,
+      "neutral": 0.9888
+    },
+    "n_dev_generated": 2000,
+    "loss": 0.0257
+  },
+  "test": {
+    "heq": {
+      "n": 2639,
+      "macro_f1": 0.9865,
+      "accuracy": 0.9875,
+      "per_label_f1": {
+        "entailment": 0.9879,
+        "contradiction": 0.9818,
+        "neutral": 0.9897
+      },
+      "n_bad_preds": 0
+    },
+    "qasem": {
+      "n": 1722,
+      "macro_f1": 0.8367,
+      "accuracy": 0.8473,
+      "per_label_f1": {
+        "entailment": 0.8484,
+        "contradiction": 0.8079,
+        "neutral": 0.8538
+      },
+      "n_bad_preds": 0
+    },
+    "hesum": {
+      "n": 2437,
+      "macro_f1": 0.9525,
+      "accuracy": 0.9598,
+      "per_label_f1": {
+        "entailment": 0.9551,
+        "contradiction": 0.9222,
+        "neutral": 0.9802
+      },
+      "n_bad_preds": 0
+    },
+    "hebsummaries": {
+      "n": 2102,
+      "macro_f1": 0.929,
+      "accuracy": 0.9291,
+      "per_label_f1": {
+        "entailment": 0.9097,
+        "contradiction": 0.8801,
+        "neutral": 0.9973
+      },
+      "n_bad_preds": 13
+    },
+    "heb_paraphrase": {
+      "n": 3713,
+      "macro_f1": 0.9878,
+      "accuracy": 0.9879,
+      "per_label_f1": {
+        "entailment": 0.9876,
+        "contradiction": 0.9791,
+        "neutral": 0.9966
+      },
+      "n_bad_preds": 0
+    },
+    "winograd": {
+      "n": 90,
+      "macro_f1": 0.7176,
+      "accuracy": 0.7556,
+      "per_label_f1": {
+        "entailment": 0.7317,
+        "contradiction": 0.4211,
+        "neutral": 1.0
+      },
+      "n_bad_preds": 0
+    },
+    "hebnli": {
+      "n": 884,
+      "macro_f1": 0.6792,
+      "accuracy": 0.7014,
+      "per_label_f1": {
+        "entailment": 0.7325,
+        "contradiction": 0.8516,
+        "neutral": 0.4535
+      },
+      "n_bad_preds": 0
+    },
+    "lchaim": {
+      "n": 805,
+      "macro_f1": 0.5323,
+      "accuracy": 0.5851,
+      "per_label_f1": {
+        "entailment": 0.6764,
+        "contradiction": 0.5903,
+        "neutral": 0.3303
+      },
+      "n_bad_preds": 0
+    }
+  },
+  "test_pooled": {
+    "n": 14392,
+    "macro_f1": 0.9153,
+    "accuracy": 0.9161,
+    "per_label_f1": {
+      "entailment": 0.9147,
+      "contradiction": 0.9058,
+      "neutral": 0.9254
+    }
+  },
+  "test_averaged": {
+    "n_test_sets": 8,
+    "macro_f1": 0.8277,
+    "accuracy": 0.8442,
+    "per_label_f1": {
+      "entailment": 0.8537,
+      "contradiction": 0.8043,
+      "neutral": 0.8252
+    }
+  }
+}

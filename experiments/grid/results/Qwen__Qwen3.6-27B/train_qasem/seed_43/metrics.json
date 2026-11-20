@@ -1,0 +1,186 @@
+{
+  "model": "Qwen/Qwen3.6-27B",
+  "architecture": "decoder",
+  "approach": "lora_sft_generation",
+  "train_dataset": "qasem",
+  "seed": 43,
+  "n_train": 2995,
+  "n_dev": 781,
+  "max_steps": 564,
+  "max_length": 2048,
+  "prompt_style": "instruction",
+  "hyperparams": {
+    "max_length": 2048,
+    "batch_size": 8,
+    "grad_accum": 2,
+    "eval_batch_size": 8,
+    "gen_batch_size": 96,
+    "dev_gen_cap": 2000,
+    "max_new_tokens": 8,
+    "lr": 0.0001,
+    "warmup_ratio": 0.03,
+    "weight_decay": 0.0,
+    "max_epochs": 3,
+    "max_steps_cap": 8000,
+    "min_steps": 100,
+    "eval_per_epoch": 4,
+    "early_stop_patience": 5,
+    "save_total_limit": 2,
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.05,
+    "lora_target": "all-linear",
+    "optim": "paged_adamw_8bit"
+  },
+  "model_flags": {
+    "attn_implementation": "sdpa",
+    "device_map": "cuda:0",
+    "gradient_checkpointing": true,
+    "batch_size": 2,
+    "grad_accum": 8,
+    "eval_batch_size": 2,
+    "lora_target": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ],
+    "vllm_lora_unsupported": true,
+    "gen_batch_size": 8
+  },
+  "finished_at": "2026-10-04T00:00:42",
+  "versions": {
+    "transformers": "5.10.0.dev0",
+    "torch": "2.10.0+cu128"
+  },
+  "lora": {
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.05
+  },
+  "dev": {
+    "n": 781,
+    "macro_f1": 0.9695,
+    "accuracy": 0.9808,
+    "per_label_f1": {
+      "entailment": 0.9826,
+      "contradiction": 0.9425,
+      "neutral": 0.9836
+    },
+    "n_dev_generated": 781,
+    "loss": 0.0156
+  },
+  "test": {
+    "heq": {
+      "n": 2639,
+      "macro_f1": 0.9868,
+      "accuracy": 0.9886,
+      "per_label_f1": {
+        "entailment": 0.9902,
+        "contradiction": 0.9787,
+        "neutral": 0.9916
+      },
+      "n_bad_preds": 0
+    },
+    "qasem": {
+      "n": 1722,
+      "macro_f1": 0.9579,
+      "accuracy": 0.9576,
+      "per_label_f1": {
+        "entailment": 0.9601,
+        "contradiction": 0.9589,
+        "neutral": 0.9547
+      },
+      "n_bad_preds": 0
+    },
+    "hesum": {
+      "n": 2437,
+      "macro_f1": 0.8197,
+      "accuracy": 0.8125,
+      "per_label_f1": {
+        "entailment": 0.7575,
+        "contradiction": 0.8705,
+        "neutral": 0.831
+      },
+      "n_bad_preds": 0
+    },
+    "hebsummaries": {
+      "n": 2102,
+      "macro_f1": 0.7823,
+      "accuracy": 0.7878,
+      "per_label_f1": {
+        "entailment": 0.7995,
+        "contradiction": 0.6632,
+        "neutral": 0.8842
+      },
+      "n_bad_preds": 13
+    },
+    "heb_paraphrase": {
+      "n": 3713,
+      "macro_f1": 0.939,
+      "accuracy": 0.9424,
+      "per_label_f1": {
+        "entailment": 0.9428,
+        "contradiction": 0.8791,
+        "neutral": 0.9951
+      },
+      "n_bad_preds": 0
+    },
+    "winograd": {
+      "n": 90,
+      "macro_f1": 0.5506,
+      "accuracy": 0.6556,
+      "per_label_f1": {
+        "entailment": 0.6517,
+        "contradiction": 0.0,
+        "neutral": 1.0
+      },
+      "n_bad_preds": 0
+    },
+    "hebnli": {
+      "n": 884,
+      "macro_f1": 0.7969,
+      "accuracy": 0.7986,
+      "per_label_f1": {
+        "entailment": 0.8343,
+        "contradiction": 0.8318,
+        "neutral": 0.7247
+      },
+      "n_bad_preds": 0
+    },
+    "lchaim": {
+      "n": 805,
+      "macro_f1": 0.5653,
+      "accuracy": 0.5839,
+      "per_label_f1": {
+        "entailment": 0.6639,
+        "contradiction": 0.5014,
+        "neutral": 0.5308
+      },
+      "n_bad_preds": 0
+    }
+  },
+  "test_pooled": {
+    "n": 14392,
+    "macro_f1": 0.8694,
+    "accuracy": 0.8774,
+    "per_label_f1": {
+      "entailment": 0.8847,
+      "contradiction": 0.8235,
+      "neutral": 0.9001
+    }
+  },
+  "test_averaged": {
+    "n_test_sets": 8,
+    "macro_f1": 0.7998,
+    "accuracy": 0.8159,
+    "per_label_f1": {
+      "entailment": 0.825,
+      "contradiction": 0.7105,
+      "neutral": 0.864
+    }
+  }
+}

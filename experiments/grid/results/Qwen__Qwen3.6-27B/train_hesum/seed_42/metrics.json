@@ -1,0 +1,186 @@
+{
+  "model": "Qwen/Qwen3.6-27B",
+  "architecture": "decoder",
+  "approach": "lora_sft_generation",
+  "train_dataset": "hesum",
+  "seed": 42,
+  "n_train": 3000,
+  "n_dev": 2382,
+  "max_steps": 564,
+  "max_length": 2048,
+  "prompt_style": "instruction",
+  "hyperparams": {
+    "max_length": 2048,
+    "batch_size": 8,
+    "grad_accum": 2,
+    "eval_batch_size": 8,
+    "gen_batch_size": 96,
+    "dev_gen_cap": 2000,
+    "max_new_tokens": 8,
+    "lr": 0.0001,
+    "warmup_ratio": 0.03,
+    "weight_decay": 0.0,
+    "max_epochs": 3,
+    "max_steps_cap": 8000,
+    "min_steps": 100,
+    "eval_per_epoch": 4,
+    "early_stop_patience": 5,
+    "save_total_limit": 2,
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.05,
+    "lora_target": "all-linear",
+    "optim": "paged_adamw_8bit"
+  },
+  "model_flags": {
+    "attn_implementation": "sdpa",
+    "device_map": "cuda:0",
+    "gradient_checkpointing": true,
+    "batch_size": 2,
+    "grad_accum": 8,
+    "eval_batch_size": 2,
+    "lora_target": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ],
+    "vllm_lora_unsupported": true,
+    "gen_batch_size": 8
+  },
+  "finished_at": "2026-09-29T03:57:46",
+  "versions": {
+    "transformers": "5.10.0.dev0",
+    "torch": "2.10.0+cu128"
+  },
+  "lora": {
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.05
+  },
+  "dev": {
+    "n": 2000,
+    "macro_f1": 0.9661,
+    "accuracy": 0.973,
+    "per_label_f1": {
+      "entailment": 0.9699,
+      "contradiction": 0.9395,
+      "neutral": 0.9888
+    },
+    "n_dev_generated": 2000,
+    "loss": 0.0247
+  },
+  "test": {
+    "heq": {
+      "n": 2639,
+      "macro_f1": 0.9865,
+      "accuracy": 0.9883,
+      "per_label_f1": {
+        "entailment": 0.9897,
+        "contradiction": 0.9781,
+        "neutral": 0.9916
+      },
+      "n_bad_preds": 0
+    },
+    "qasem": {
+      "n": 1722,
+      "macro_f1": 0.82,
+      "accuracy": 0.8362,
+      "per_label_f1": {
+        "entailment": 0.839,
+        "contradiction": 0.7738,
+        "neutral": 0.8472
+      },
+      "n_bad_preds": 0
+    },
+    "hesum": {
+      "n": 2437,
+      "macro_f1": 0.9557,
+      "accuracy": 0.9627,
+      "per_label_f1": {
+        "entailment": 0.9579,
+        "contradiction": 0.9271,
+        "neutral": 0.9822
+      },
+      "n_bad_preds": 0
+    },
+    "hebsummaries": {
+      "n": 2102,
+      "macro_f1": 0.9127,
+      "accuracy": 0.9134,
+      "per_label_f1": {
+        "entailment": 0.8886,
+        "contradiction": 0.853,
+        "neutral": 0.9966
+      },
+      "n_bad_preds": 13
+    },
+    "heb_paraphrase": {
+      "n": 3713,
+      "macro_f1": 0.984,
+      "accuracy": 0.9841,
+      "per_label_f1": {
+        "entailment": 0.9839,
+        "contradiction": 0.9765,
+        "neutral": 0.9916
+      },
+      "n_bad_preds": 0
+    },
+    "winograd": {
+      "n": 90,
+      "macro_f1": 0.7748,
+      "accuracy": 0.7889,
+      "per_label_f1": {
+        "entailment": 0.7467,
+        "contradiction": 0.5778,
+        "neutral": 1.0
+      },
+      "n_bad_preds": 0
+    },
+    "hebnli": {
+      "n": 884,
+      "macro_f1": 0.7397,
+      "accuracy": 0.7613,
+      "per_label_f1": {
+        "entailment": 0.7746,
+        "contradiction": 0.9161,
+        "neutral": 0.5283
+      },
+      "n_bad_preds": 0
+    },
+    "lchaim": {
+      "n": 805,
+      "macro_f1": 0.609,
+      "accuracy": 0.6422,
+      "per_label_f1": {
+        "entailment": 0.7197,
+        "contradiction": 0.658,
+        "neutral": 0.4494
+      },
+      "n_bad_preds": 0
+    }
+  },
+  "test_pooled": {
+    "n": 14392,
+    "macro_f1": 0.9179,
+    "accuracy": 0.9192,
+    "per_label_f1": {
+      "entailment": 0.9188,
+      "contradiction": 0.9051,
+      "neutral": 0.9298
+    }
+  },
+  "test_averaged": {
+    "n_test_sets": 8,
+    "macro_f1": 0.8478,
+    "accuracy": 0.8596,
+    "per_label_f1": {
+      "entailment": 0.8625,
+      "contradiction": 0.8326,
+      "neutral": 0.8484
+    }
+  }
+}
