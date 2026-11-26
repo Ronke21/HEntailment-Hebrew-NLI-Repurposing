@@ -71,7 +71,7 @@ The human-validation protocol is in `validation/` (sampling, guidelines, scoring
 
 ```bash
 pip install -r requirements.txt
-python experiments/build_data_root.py          # data/corpus -> data/experiments (needs HebNLI and LCAHIM, see DATA_LICENSE.md)
+python experiments/build_data_root.py          # data/corpus -> data/experiments (needs HebNLI and LCHAIM, see DATA_LICENSE.md)
 python experiments/src/run_experiments.py \
     --experiment-root experiments/grid \
     --models FacebookAI/xlm-roberta-large --train-datasets hent_all --seeds 42

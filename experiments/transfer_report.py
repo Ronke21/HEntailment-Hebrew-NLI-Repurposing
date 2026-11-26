@@ -4,7 +4,7 @@ Transfer report, both directions, every model (CPU; reads metrics.json).
 Writes transfer_report.md next to this file.
 
 Direction 1, HEntailment -> translated NLI: a model fine-tuned on one HEntailment
-source (or all five pooled), scored on HebNLI and LCAHIM.
+source (or all five pooled), scored on HebNLI and LCHAIM.
   * decoders: delta against the model's own zero-shot score;
   * encoders have no zero-shot (random head), so they are reported against chance
     (0.333) and against the same encoder fine-tuned on HebNLI (hebnli_15k).

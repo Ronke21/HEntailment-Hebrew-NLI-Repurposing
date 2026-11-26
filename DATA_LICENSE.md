@@ -10,4 +10,4 @@ HEntailment is derived from five native Hebrew datasets. It is released under **
 | HebSummaries | summarization | no license stated by the authors |
 | Hebrew-Paraphrase | paraphrase | CC BY-SA 4.0 |
 
-The two translated benchmarks used in the experiments, **HebNLI** and **LCAHIM**, are not redistributed here or on the Hugging Face Hub. Obtain them from their authors and run `construction/stage1/08_hebnli_convert.py` and `04_lchaim_convert.py` to put them in the format the experiments expect. Hebrew Winograd is used the same way.
+The two translated benchmarks used in the experiments, **HebNLI** and **LCHAIM**, are not redistributed here or on the Hugging Face Hub. Obtain them from their authors and run `construction/stage1/08_hebnli_convert.py` and `04_lchaim_convert.py` to put them in the format the experiments expect. Hebrew Winograd is used the same way.

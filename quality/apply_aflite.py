@@ -3,7 +3,7 @@
 Materialise the AFLite-filtered data, re-probe it and re-score trained models on it.
 
 Runs after run_aflite.py. Outputs:
-  1. data/experiments_aflite/<src>/{train,dev,test}.jsonl (HebNLI, LCAHIM and
+  1. data/experiments_aflite/<src>/{train,dev,test}.jsonl (HebNLI, LCHAIM and
      Winograd are linked unchanged);
   2. quality/results_tfidf_aflite.json: the hypothesis-only TF-IDF probe on the
      filtered data, same instrument as before filtering;

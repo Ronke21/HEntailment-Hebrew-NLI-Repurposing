@@ -37,10 +37,10 @@ SOURCES = ["heq", "qasem", "hesum", "hebsummaries", "heb_paraphrase"]
 TRANSLATED = ["hebnli", "lchaim"]
 LABELS = ["entailment", "contradiction", "neutral"]
 
-# 236 per label -> 708 per dataset. 236 is LCAHIM's smallest test class, so it
+# 236 per label -> 708 per dataset. 236 is LCHAIM's smallest test class, so it
 # is the largest EQUAL balanced sample all three compared datasets can supply.
 # Same rule that sets the 1,900-per-label training cap, applied to evaluation,
-# so HEntailment / HebNLI / LCAHIM rest on identical amounts of evidence.
+# so HEntailment / HebNLI / LCHAIM rest on identical amounts of evidence.
 PER_LABEL_SINGLE = 236
 PER_LABEL_POOLED = 236
 

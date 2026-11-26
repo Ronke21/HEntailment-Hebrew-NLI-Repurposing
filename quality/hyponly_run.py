@@ -15,7 +15,7 @@ ARMS
 
 WHY THE TRAIN CAP
 Every arm trains on a class-balanced 1,900-per-label (5,700) subsample of the
-dataset's own train split. LCAHIM's smallest train class has 1,946 examples,
+dataset's own train split. LCHAIM's smallest train class has 1,946 examples,
 so this is the largest balanced size every one of the eight conditions can
 supply. Holding it fixed matters: hypothesis-only accuracy rises with
 training size, so unequal train splits (HebNLI has 300k, HebSummaries 10k)

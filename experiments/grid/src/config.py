@@ -3,8 +3,8 @@
 Configuration of the main grid (read by experiments/src/run_experiments.py).
 
 Train on one of TRAIN_SPECS_DEFAULT (8 conditions: each HEntailment source,
-all five pooled (hent_all), HebNLI-15k, LCAHIM-max) and evaluate on 8 test sets
-(5 HEntailment + Winograd + HebNLI + LCAHIM); 11 models (5 encoders, 6
+all five pooled (hent_all), HebNLI-15k, LCHAIM-max) and evaluate on 8 test sets
+(5 HEntailment + Winograd + HebNLI + LCHAIM); 11 models (5 encoders, 6
 decoders); seeds 42, 43, 44; plus a zero-shot run per decoder.
 
 Data live in DATA_ROOT/<name>/{train,dev,test}.jsonl, records
