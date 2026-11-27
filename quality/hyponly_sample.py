@@ -8,7 +8,7 @@ Draws, from the TEST split of each dataset, a class-balanced random sample:
   hebnli, lchaim                                    300 each (100 per label)
   hentailment_all (pooled over the 5 sources)      1500     (500 per label)
 
-Everything is drawn from `repurposed_data_v2b`, the released corpus, under a
+Everything is drawn from the released corpus (`data/corpus`), under a
 fixed seed so the same sample is reproducible and identical across every
 classifier arm. These are EVALUATION sets only: each hypothesis-only
 classifier is trained on the corresponding dataset's own train split and

@@ -38,7 +38,7 @@ The dataset also has a **`verified` test config**: the test items whose label an
 Each source annotation is mapped to NLI pairs whose label follows from the original task.
 
 1. **Entailment.** The gold annotation becomes the hypothesis: a question and its answer are rewritten as a declarative sentence (an LLM does the surface realization only), a summary is entailed by its article, a paraphrase by its original.
-2. **Neutral.** For each premise, the most similar hypothesis written for a *different* premise (mE5 cosine, under a similarity ceiling).
+2. **Neutral.** For each premise, the most similar hypothesis written for a *different* premise (NeoDictaBERT embedding similarity, below a cosine ceiling of 0.7).
 3. **Contradiction.** Rule-based edits of the entailment hypothesis (swap a person, organization or place for another entity of the same type, change a number to one of the same magnitude, antonym, superlative, quantifier, ...). gemma-4-31B-it then **filters** the candidates. A candidate ships only if the judge finds the edited sentence grammatical *and* calls the pair a contradiction. Rules whose output is recoverable from the hypothesis alone are excluded (`construction/resources/<src>/exclude_rules.txt`). Grounded edits are preferred.
 
 | stage | script | hardware |

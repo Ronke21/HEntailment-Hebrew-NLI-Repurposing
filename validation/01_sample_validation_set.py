@@ -128,7 +128,7 @@ def sample_stratum(rows, label, n, rng):
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--corpus-dir", type=Path, default=DEFAULT_CORPUS_DIR,
-                     help="Path to the released corpus (repurposed_data_v2b)")
+                     help="Path to the released corpus (data/corpus)")
     ap.add_argument("--split", default="test",
                      help="Which split to sample from (default: test, the benchmark's own eval split)")
     ap.add_argument("--sources", nargs="+", default=SOURCES)

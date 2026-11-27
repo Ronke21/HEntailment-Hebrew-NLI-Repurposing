@@ -3,7 +3,7 @@
 Neutral-selection ablation: build the distant-neutral training variant.
 
 The corpus pairs each premise with the most similar other-premise hypothesis
-as its neutral (under an mE5 similarity ceiling). This script re-picks each
+as its neutral (NeoDictaBERT embeddings, cosine ceiling 0.7). This script re-picks each
 group's neutral as the least similar other-premise hypothesis by mE5 cosine,
 leaving premises, entailments and contradictions identical. dev/test are the
 standard splits, so the two arms differ only in the training-time neutral policy.
