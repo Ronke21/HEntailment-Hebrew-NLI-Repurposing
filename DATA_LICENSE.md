@@ -1,6 +1,6 @@
 # Data licenses
 
-HEntailment is derived from five native Hebrew datasets. It is released under **CC BY-SA 4.0**, the most restrictive term among its sources. If you use it, please also cite the source datasets.
+HEntailment is derived from five native Hebrew datasets. The annotations and processing we add (labels, contradiction edits, neutral pairing, splits) are released under **CC BY-SA 4.0**, the most restrictive license among the sources that state one. Text from a source without a stated license (HebSummaries) stays under its rights holders' terms; we do not grant rights to it. If you use the corpus, please also cite the source datasets.
 
 | source | task | license of the source |
 |---|---|---|

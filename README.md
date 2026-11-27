@@ -105,7 +105,7 @@ Each model card lists its scores (mean ± SD over the three seeds, from the pape
 ## Licenses
 
 - **Code:** Apache-2.0 (`LICENSE`).
-- **Data:** CC BY-SA 4.0, the most restrictive term among the sources. Per-source terms are in `DATA_LICENSE.md`.
+- **Data:** our annotations and processing are CC BY-SA 4.0, the most restrictive license among the sources that state one. Text from a source without a stated license (HebSummaries) stays under its rights holders' terms. Per-source terms are in `DATA_LICENSE.md`.
 
 ## Citation
 
